@@ -47,20 +47,20 @@
 
 <p>This is just an example page that I created to familiarize myself with the technologies. I hope to get the real thing up and running soon!</p>
 
-<div class="highlight"><pre><code class="php"><span class="lineno"> 1</span> <span class="cp">&lt;?php</span>
-<span class="lineno"> 2</span> <span class="k">try</span><span class="p">{</span>
-<span class="lineno"> 3</span>  <span class="nv">$bdd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">&#39;mysql:host=localhost;dbname=test&#39;</span><span class="p">,</span><span class="s1">&#39;root&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="lineno"> 4</span> <span class="p">}</span>
-<span class="lineno"> 5</span> <span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">){</span>
-<span class="lineno"> 6</span>  <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Error: &#39;</span><span class="o">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="lineno"> 7</span> <span class="p">}</span>
-<span class="lineno"> 8</span> <span class="nv">$req</span> <span class="o">=</span> <span class="nv">$bdd</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">&#39;INSERT INTO minichat(username, message) VALUES(:username, :message)&#39;</span><span class="p">);</span>
-<span class="lineno"> 9</span> <span class="nv">$req</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-<span class="lineno">10</span>  <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]),</span>
-<span class="lineno">11</span>  <span class="s1">&#39;message&#39;</span>  <span class="o">=&gt;</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
-<span class="lineno">12</span>  <span class="p">));</span>
-<span class="lineno">13</span> <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Location: minichat.php#bottom&#39;</span><span class="p">);</span>
-<span class="lineno">14</span> <span class="cp">?&gt;</span><span class="x"></span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<span class="k">try</span><span class="p">{</span>
+    <span class="nv">$bdd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">&#39;mysql:host=localhost;dbname=test&#39;</span><span class="p">,</span><span class="s1">&#39;root&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">){</span>
+    <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Error: &#39;</span><span class="o">.</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="nv">$req</span> <span class="o">=</span> <span class="nv">$bdd</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">&#39;INSERT INTO minichat(username, message) VALUES(:username, :message)&#39;</span><span class="p">);</span>
+<span class="nv">$req</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]),</span>
+    <span class="s1">&#39;message&#39;</span>  <span class="o">=&gt;</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
+    <span class="p">));</span>
+<span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Location: minichat.php#bottom&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
 
 <p><br />
