@@ -1,0 +1,8 @@
+@import "vendor/normalize";
+@import "vendor/solarized-dark";
+/* make lines wrap around */
+pre{
+white-space:pre-wrap;
+word-wrap:break-word;
+background-color:#181818;
+}
