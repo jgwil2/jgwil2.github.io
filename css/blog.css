@@ -834,6 +834,8 @@ pre {
 
 .post-title {
   font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif; }
+  .post-title a:link {
+    color: #6889ad; }
   .post-title a:visited {
     color: #6889ad; }
   .post-title a:hover {
@@ -853,6 +855,12 @@ figcaption {
   -moz-transition: all 300ms ease-in-out;
   -ms-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out; }
+
+.button:link {
+  color: white; }
+
+.button:visited {
+  color: white; }
 
 .button:hover {
   color: white;

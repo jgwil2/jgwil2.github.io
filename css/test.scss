@@ -50,6 +50,9 @@ pre{
 }
 .post-title{
 	font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
+	a:link{
+		color: $theme;
+	}
 	a:visited{
 		color: $theme;
 	}
@@ -68,6 +71,12 @@ figcaption{
 	color: white;
 	background-color: $theme;
 	@include transition(all 300ms ease-in-out);
+}
+.button:link{
+	color: white;
+}
+.button:visited{
+	color: white;
 }
 .button:hover{
 	color: white;
