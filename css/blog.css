@@ -805,11 +805,11 @@ body {
     color: black; }
 
 .contain-to-grid {
-  background-color: #6889ad; }
+  background-color: #224770; }
   .contain-to-grid nav.top-bar {
-    background-color: #6889ad; }
+    background-color: #224770; }
     .contain-to-grid nav.top-bar .top-bar-section a {
-      background-color: #6889ad; }
+      background-color: #224770; }
     .contain-to-grid nav.top-bar .top-bar-section ul li > a:hover {
       background-color: #001f3f; }
 
@@ -835,9 +835,9 @@ pre {
 .post-title {
   font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif; }
   .post-title a:link {
-    color: #6889ad; }
+    color: #224770; }
   .post-title a:visited {
-    color: #6889ad; }
+    color: #224770; }
   .post-title a:hover {
     color: #001f3f; }
 
@@ -849,7 +849,7 @@ figcaption {
 
 .button {
   color: white;
-  background-color: #6889ad;
+  background-color: #224770;
   transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
