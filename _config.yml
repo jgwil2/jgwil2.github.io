@@ -1,0 +1,6 @@
+name: John Willard
+description: A blog by John Willard
+markdown: redcarpet
+pygments: true
+permalink: pretty
+url: "http://jgwil2.github.io"

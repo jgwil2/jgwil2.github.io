@@ -1,0 +1,34 @@
+/* PRETTIER LINKS */
+
+@mixin transition ($trans){
+	transition: $trans;
+	-webkit-transition: $trans;
+	-moz-transition: $trans;
+	-ms-transition: $trans;
+	-o-transition: $trans;
+}
+
+a {
+    text-decoration:    none;
+    @include transition(all 300ms ease-in-out);
+  }
+
+a:link    {
+  color: $blue;
+  @include transition(all 300ms ease-in-out);
+}
+
+/*a:visited {
+  color: $purple;
+}*/
+
+a:hover   {
+  color: $aqua;
+  @include transition(all 300ms ease-in-out);
+}
+
+a:active  {
+  color: $orange;
+  @include transition(all 300ms ease-in-out);
+}
+
