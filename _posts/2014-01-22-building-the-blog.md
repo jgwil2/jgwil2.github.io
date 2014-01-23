@@ -61,3 +61,5 @@ in your browser, navigate to localhost:4000, and voilà! You'll have a little
 demo site explaining some of Jekyll's functionalities.
 
 ### Making the site
+
+Now let's dig into the site itself.
