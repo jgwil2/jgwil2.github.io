@@ -8,7 +8,7 @@ about web development. I'm a newbie, and as such, there are tons of things to
 learn. I'm hoping that this blog will help me consolidate and concretize this 
 knowledge, and maybe help some other newbies out too! I plan on making each post 
 a description of a small project that clarifies some aspect of web development. 
-In this way the blog will follow my progress as a developper.
+In this way the blog will follow my progress as a developer.
 
 The first project that I'll discuss will be, well, this blog! It was a pretty 
 big project for me since I had never done anything like this before, so I'll 
