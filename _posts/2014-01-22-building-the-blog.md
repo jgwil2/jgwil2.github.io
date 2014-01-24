@@ -99,7 +99,9 @@ layout: default
 	{% for post in site.posts %}
 	
 		<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+		
 		<p class="meta">{{ post.date | date_to_string }}</p>
+		
 		{{ post.content }}
 		
 	{% endfor %}
