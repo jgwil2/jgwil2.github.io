@@ -94,21 +94,14 @@ title: Home
 layout: default
 ---
 
-    <div>
-	
-		<div>
-		
-		<h2>This is the home page</h2>
+	<h2>This is the home page</h2>
 
-		{% for post in site.posts %}
-			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-			<p class="meta">{{ post.date | date_to_string }}</p>
-			{{ post.content }}
-		{% endfor %}
+	{% for post in site.posts %}
+		<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+		<p class="meta">{{ post.date | date_to_string }}</p>
+		{{ post.content }}
+	{% endfor %}
 	
-		</div>
-		
-	</div>
 {% endraw %}
 {% endhighlight%}  
 <br />
