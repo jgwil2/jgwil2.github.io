@@ -1,4 +1,8 @@
 @import "vendor/normalize";
+
+pre code{
+	color: #586e75;
+}
 @import "vendor/solarized-dark";
 @import "vendor/colors";
 
@@ -42,6 +46,7 @@ pre{
 	padding: 5px 10px;
 	box-sizing: border-box;
 }
+@media only screen and (min-width: 1024px){
 .recent{
 	.columns{
 		border-right: solid 1px $gray;
@@ -50,6 +55,11 @@ pre{
 	.columns:last-child{
 		border-right: none;
 	}
+}
+.topborder{
+	border-top: solid 1px $gray;
+	margin-top: 1rem;
+}
 }
 .post-title, .move{
 	font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
@@ -70,6 +80,9 @@ figcaption{
 	font-size: $small;
 	line-height: 1.2rem;
 	color: $gray;
+	#follow-button{
+		float: right;
+	}
 }
 .button{
 	color: white;
@@ -86,4 +99,37 @@ figcaption{
 	color: white;
 	background-color: $aqua;
 	@include transition(all 300ms ease-in-out);
+}
+#disqus_thread{
+	@include transition(all 300ms ease-in-out);
+}
+footer{
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 5px solid $navy;
+	color: white;
+	background-color: $theme;
+	width: 100%;
+	.row, p,h1,h2,h3,h4,h5,h6{
+		color: white;
+		img{
+			margin: 0 5px;
+			@include transition(all 200ms ease-in-out);
+		}
+		a:link{
+			color: white;
+			text-decoration: underline;
+		}
+		a:visited{
+			color: white;
+		}
+		a:hover{
+			color: $aqua;
+			img{
+				-webkit-transform: translateY(.1rem);
+				transform: translateY(.1rem);
+				@include transition(all 200ms ease-in-out);
+			}
+		}
+	}
 }

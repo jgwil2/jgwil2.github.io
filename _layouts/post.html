@@ -16,11 +16,11 @@
 	</div>
 	
 	<div class="row">
-		<div class="large-8 columns">
+		<div class="small-6 large-8 columns">
 			<h4><a class="move show-comments">Show comments</a></h4>
 		</div>
-		<div class="large-4 columns">
-			<h4><a href="/posts" class="move right">See all posts</a></h4>
+		<div class="small-6 large-4 columns">
+			<h4><a href="/posts" class="move right">See all posts &#8594;</a></h4>
 		</div>
 	</div>
 	
@@ -30,7 +30,15 @@
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'jgwil2'; // required: replace example with your forum shortname
-
+		disqus_config = function() { // fix display in firefox
+			this.callbacks.onReady = [function() {
+				$('#disqus_thread iframe').css({
+					'height': '351px',
+					'height': 'auto !important',
+					'min-height': '351px'
+				});
+			}];
+		};
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

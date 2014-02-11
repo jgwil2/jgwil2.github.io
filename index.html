@@ -2,20 +2,54 @@
 title: Home
 layout: default
 ---
-
-    <div class="row">
-	
+	<div class="row">
 		<div class="large-12 columns">
-		
-		<h2>Welcome to my new blog. Here is my most recent post.</h2>
-
-		{% for post in site.posts limit:1 %}
-			<h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-			<p class="meta">{{ post.date | date_to_string }}</p>
-			<p>{{ post.content }}</p>
-		{% endfor %}
-	
+			<h2>About me</h2>
 		</div>
-		
+	</div>
+	<div class="row">
+		<div class="large-8 columns">
+			<p>My name is John Willard and I am learning about web design and development. I am from Arlington, Virginia, but I currently reside in Strasbourg, France. My interests include:</p>
+			<ul>
+				<li>Back-end development with PHP and MySQL</li>
+				<li>Front-end development with HTML/CSS, and front-end frameworks</li>
+				<li>JavaScript and jQuery- I'm still a JS newbie but one day I hope to be a ninja</li>
+				<li>Blogging about what I learn</li>
+			</ul>
+			<p>This site was built using Jekyll and Foundation 5, and I'm going to use it to write about what I'm learning and the projects that I'm working on. Feel free to check it out and leave comments or drop me a line. Thanks!</p>
+		</div>
+		<div class="large-4 columns">
+			<figure>
+				<img src="/img/mastroianni.jpg" />
+				<figcaption>
+				<br />
+				<p>Not me.</p>
+				</figcaption>
+				</figure>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-6 large-6 columns">
+			<a href="https://twitter.com/jgwil2" class="twitter-follow-button" data-dnt="true" data-align="right" data-size="large" data-show-count="false" data-lang="en">Follow @jgwil2</a>
+		</div>
+		<div class="small-6 large-6 columns">
+			<h4><a href="/about" class="move right">More about me &#8594;</a></a></a></h4>
+		</div>
 	</div>
 	
+	{% for post in site.posts limit:1 %}
+    <div class="row topborder">
+		<div class="large-12 columns">
+			<h2>Recent posts</h2>
+			<h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p class="meta">{{ post.date | date_to_string }}</p>
+			{{ post.content | truncatewords: 150 }}
+		</div>	
+	</div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h4><a href="{{ post.url}}" class="move right">See full article  &#8594;</a></a></a></h4>
+		</div>
+	</div>
+	{% endfor %}

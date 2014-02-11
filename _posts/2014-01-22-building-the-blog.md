@@ -104,7 +104,8 @@ layout: default
 		
 		{{ post.content }}
 		
-	{% endfor %}
+	{% endfor %
+	
 {% endraw %}
 {% endhighlight%}  
 <br />
