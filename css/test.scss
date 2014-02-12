@@ -1,9 +1,14 @@
 @import "vendor/normalize";
-
+code{
+	font-weight: normal;
+	background-color: #fdf6e3;
+}
 pre code{
 	color: #586e75;
+	font-weight: normal;
+	line-height: 1.4rem;
 }
-@import "vendor/solarized-dark";
+@import "vendor/solarized-light";
 @import "vendor/colors";
 
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
@@ -32,7 +37,7 @@ body{
 li.name{
 	background-color: $theme;
 }
-.row{
+.row, .reveal-modal{
 	/*background-color: #222;*/
 	color: $black;
 	font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
@@ -43,7 +48,7 @@ pre{
 	white-space:pre-wrap;
 	word-wrap:break-word;
 	/*background-color:#181818;*/
-	padding: 5px 10px;
+	padding: 10px 15px;
 	box-sizing: border-box;
 }
 @media only screen and (min-width: 1024px){
