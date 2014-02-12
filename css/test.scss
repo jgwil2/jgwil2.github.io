@@ -2,11 +2,16 @@
 code{
 	font-weight: normal;
 	background-color: #fdf6e3;
+	/*border: solid 1px #ddd;*/
 }
-pre code{
-	color: #586e75;
-	font-weight: normal;
-	line-height: 1.4rem;
+pre{
+	border: solid 1px #ddd;
+	code{
+		color: #586e75;
+		font-weight: normal;
+		line-height: 1.4rem;
+		border: none;
+	}
 }
 @import "vendor/solarized-light";
 @import "vendor/colors";
