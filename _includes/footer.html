@@ -16,13 +16,17 @@
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<script>
 	$(document).ready(function(){
-		$("#comments").hide();
 	});
-		$("#show-comments").click(function(){
-			$("#comments").toggle();
-			var showHide = $(this).text() == "Show comments" ? "Hide comments" : "Show comments";
-			$(this).text(showHide);
-		});
+	$("#show-comments").click(function(){	
+		var showHide = $(this).text() == "Show comments" ? "Hide comments" : "Show comments";
+		$(this).text(showHide);
+		if (showHide != "Hide comments") {
+			$('#disqus_thread').empty();
+		}
+		else {
+			$.ajaxSetup({cache:true});$.getScript("http://jgwil2.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();
+		}
+	});
 	</script>
   </body>
 </html>
