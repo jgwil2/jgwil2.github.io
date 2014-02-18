@@ -27,7 +27,10 @@
 			$('#disqus_thread').empty();
 		}
 		else {
-			$.ajaxSetup({cache:true});$.getScript("http://jgwil2.disqus.com/embed.js");$.ajaxSetup({cache:false});$("#disqus_loader").remove();
+			$.ajaxSetup({cache:true});
+			$.getScript("http://jgwil2.disqus.com/embed.js");
+			$.ajaxSetup({cache:false});
+			$("#disqus_loader").remove();
 		}
 	});
 	</script>

@@ -10,14 +10,22 @@
 	
   </head>
   <body>
+	<header>
+	<div class="row">
+		<div class="large-12 columns">
+			<h1 class="site_name">{{ site.name }}</h1>
+			<h2>{ Learning and blogging about web development }</h2>
+		</div>
+	</div>
+	</header>
       <!-- Navigation -->
-	  <div class="contain-to-grid fixed">
+	  <div class="contain-to-grid sticky">
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <!-- Title Area -->
           <li class="name">
             <h1>
-              <a href="/">{{ site.name }}</a>
+              <a href="/">Home</a>
             </h1>
           </li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -26,9 +34,8 @@
         <section class="top-bar-section">
           <ul class="right">
             <li><a href="/about">About</a></li>
-			<li><a href="#">Projects</a></li>
 			<li><a href="/posts">Posts</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="/contact">Contact</a></li>
           </ul>
         </section>
       </nav>

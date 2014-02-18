@@ -2,7 +2,8 @@
 code{
 	font-weight: normal;
 	background-color: #fdf6e3;
-	/*border: solid 1px #ddd;*/
+	color: #181818;
+	border: solid 1px #ddd;
 }
 pre{
 	border: solid 1px #ddd;
@@ -12,6 +13,9 @@ pre{
 		line-height: 1.4rem;
 		border: none;
 	}
+}
+figure img{
+	border: solid 1px #ddd;
 }
 @import "vendor/solarized-light";
 @import "vendor/colors";
@@ -59,21 +63,25 @@ pre{
 @media only screen and (min-width: 1024px){
 .recent{
 	.columns{
-		border-right: solid 1px $gray;
-		border-top: solid 1px $gray;
+		border-right: solid 1px $silver;
+		border-top: solid 1px $silver;
 	}
 	.columns:last-child{
 		border-right: none;
 	}
 }
 .topborder{
-	border-top: solid 1px $gray;
+	border-top: solid 1px $silver;
 	margin-top: 1rem;
+	padding-top: 1rem;
 }
 }
 .post-title, .move{
 	font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
 	color: $theme;
+	a{
+		color: $theme;
+	}
 	a:link{
 		color: $theme;
 	}
@@ -84,7 +92,12 @@ pre{
 		color: $aqua;
 	}
 }
-
+.post-title:link, .move:link{
+	color: $theme;
+}
+.post-title:visited, .move:visited{
+	color: $theme;
+}
 figcaption{
 	font-style: italic;
 	font-size: $small;
@@ -110,6 +123,25 @@ figcaption{
 #disqus_thread{
 	@include transition(all 300ms ease-in-out);
 }
+header{
+	width: 100%;
+	background-color: $navy;
+	padding-bottom: .5rem;
+	h1{
+		color: white;
+		font-size: 5rem;
+		text-align: left;
+		margin: .2rem 0;
+	}
+	h2{
+		font-size: 2rem;
+		color: white;
+		margin: .2rem 0;
+	}
+}
+.contain-to-grid{
+	margin-bottom: 2rem;
+}
 footer{
 	margin-top: 10px;
 	padding-top: 10px;
@@ -120,6 +152,7 @@ footer{
 	.row, p,h1,h2,h3,h4,h5,h6{
 		color: white;
 		img{
+			border: none;
 			margin: 0 5px;
 			@include transition(all 200ms ease-in-out);
 		}
