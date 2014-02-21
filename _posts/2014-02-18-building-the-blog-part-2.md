@@ -161,7 +161,7 @@ Now I'll go to the terminal and run `jekyll serve`, and I have this:
 	<img alt="My Jekyll blog with the Foundation template" src="/img/found_jekyll_screen.png" />
 </figure>
 <br />
-You might have noticed that I just went ahead and threw both the main content and the sidebar area into `index.html`. If we wanted to get even fancier, we could go back to _includes, add a `sidebar.html`, and modify `_layouts/default.html` so that it would look like this:
+You might have noticed that I just went ahead and threw both the main content and the sidebar area into `index.html`. If we wanted to get even fancier, we could put the HTML for the sidebar into a separate `sidebar.html` file in the _includes folder, and modify `_layouts/default.html` so that it would look like this:
 
 ```
 {% raw %}
