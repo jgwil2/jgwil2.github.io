@@ -1,6 +1,7 @@
 ---
-title: Building the Blog, Part 2
+title: "Building the Blog, Part 2"
 layout: post
+published: true
 ---
 
 This post will be the second to tackle the creation of this blog. [The first post](/2014/01/22/building-the-blog/) mostly dealt with setting up Jekyll, from installation to file structure. In this section I'm going to talk about using the front-end framework [Foundation 5](http://foundation.zurb.com/) to provide the basic layouts of the site. Foundation is similar to [Bootstrap](http://getbootstrap.com/): it is a mobile-first, responsive framework built on a grid system, and it provides a stylesheet + tons of JS that you can use to get a prototype up and running in minutes. All you need to do is read the documentation and write the HTML, and the framework will take care of the rest. Later, you can customize the framework or override it with your own CSS. I had been wanting to get some experience using a responsive framework for a while, so I took a look at some tutorials and then got started writing HTML.
@@ -176,4 +177,4 @@ You might have noticed that I just went ahead and threw both the main content an
 <br />
 Feel free to give it a shot; it will give you even more freedom when you start constructing new layouts. Just remember that in order for it to work with Foundation, each row has to have 12 columns. Sometimes that can be hard to keep track of when you're throwing different files together on the fly. 
 
-If this post interested you, go and check out the Foudation docs: they've got tons of cool stuff that can make development easier and more fun. Let me know what you learn!
+If this post interested you, go and check out the Foudation docs: they've got tons of cool stuff that can make development easier and more fun. Next steps might include using the Foundation Sass to customize your site's look and adding some different web fonts; one problem with frameworks like this is that they tend to all look the same if you don't add a little personal flair. Let me know what you learn!
