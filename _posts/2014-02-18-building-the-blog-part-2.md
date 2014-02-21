@@ -119,7 +119,7 @@ If you read Part 1, you'll recall that the core of the home page of a blog is "t
 	<article>
 	  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>	
 	  <p class="meta">{{ post.date | date_to_string }}</p>
-	  {{ post.content }}
+	{{ post.content }}
 	</article>
 
 	<hr />
