@@ -67,13 +67,18 @@ demo site explaining some of Jekyll's functionalities:
 Again, if you're familiar with WordPress, the basic concept of Jekyll shouldn't be too strange to you. When you build your site, Jekyll should generate the following file structure in your project folder:
 
 * _layouts
+	* `default.html`
+	* `post.html`
 * _posts
-* _site
+	* `2014-01-18-welcome-to-jekyll.markdown` (sample post generated when you create the new project)
+* _site (contains all pages that Jekyll generates when you build; this is what the user will see)
 * css
+	* `main.css` (Jekyll's default stylesheet)
+	* `syntax.css` (another stylesheet designed to work with Pygments to highlight your code snippets)
 * `_config.yml`
 * `index.html`
 
-To this you will want to add at least one subdirectory, _includes, which will contain page elements that you can then mix together, just like a PHP site. The _posts folder is where you put your posts (if you're making a blog), and _layouts is going to allow us to store different layouts for different pages. You should already have a post in your _posts subdirectory, so take note of the title format. Mine is entitled 2014-01-22-welcome-to-jekyll.markdown. It's important to title each of your posts in the YYYY-MM-DD-slug format, with everything separated by dashes. Jekyll is going to use this format to create your post's URL and store its date.
+To this you will want to add at least one subdirectory, _includes, which will contain page elements that you can then mix together, just like a PHP site. The _posts folder is where you put your posts (if you're making a blog), and _layouts is going to allow us to store different layouts for different pages. You should already have a post in your _posts subdirectory, so take note of the title format. Mine is entitled 2014-01-18-welcome-to-jekyll.markdown. It's important to title each of your posts in the YYYY-MM-DD-slug format, with everything separated by dashes. Jekyll is going to use this format to create your post's URL and store its date. Finally, if you want to make any other pages, like "About" or "Contact", you do so simply by adding a folder with the name that you want to appear in the URL of the page. Then, you write your page as the `index.html` of that subdirectory.
 
 In the _layouts subdirectory you should already have a couple of files, `default.html` and `post.html`. If you open them up you'll find some pretty basic HTML surrounding an interesting little element {% raw %}`{{content}}`{% endraw %}. This wierd little piece of bracketed code is a [Liquid template tag](http://liquidmarkup.org/), and it's going to help fit our different files together. Everytime we create a page with Jekyll, we have to tell it what layout to use, and if we go with the default, Jekyll is going to generate a new file consisting of everything in `default.html` *plus* the content of the page. If we want to simplify our layout page even more, we can cut all of the HTML above {% raw %}`{{content}}`{% endraw %} and paste it into `_includes/header.html`, and all the HTML below can got into `_includes/footer.html`. This leaves us with three lines of code in `_layouts/default.html`:
 

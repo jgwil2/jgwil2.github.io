@@ -1,3 +1,4 @@
+@import "vendor/foundation";
 @import "vendor/normalize";
 code{
 	font-weight: normal;
@@ -61,20 +62,20 @@ pre{
 	box-sizing: border-box;
 }
 @media only screen and (min-width: 1024px){
-.recent{
-	.columns{
-		border-right: solid 1px $silver;
-		border-top: solid 1px $silver;
-	}
-	.columns:last-child{
-		border-right: none;
+	.recent{
+		.columns{
+			border-right: solid 1px $silver;
+			border-top: solid 1px $silver;
+		}
+		.columns:last-child{
+			border-right: none;
+		}
 	}
 }
 .topborder{
 	border-top: solid 1px $silver;
 	margin-top: 1rem;
 	padding-top: 1rem;
-}
 }
 .post-title, .move{
 	font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
@@ -97,6 +98,9 @@ pre{
 }
 .post-title:visited, .move:visited{
 	color: $theme;
+}
+.post-title:hover, .move:hover{
+	color: $aqua;
 }
 figcaption{
 	font-style: italic;
@@ -129,14 +133,25 @@ header{
 	padding-bottom: .5rem;
 	h1{
 		color: white;
-		font-size: 5rem;
+		font-size: 4rem;
 		text-align: left;
-		margin: .2rem 0;
+		margin: 1px 0 2px 0;
 	}
 	h2{
 		font-size: 2rem;
 		color: white;
-		margin: .2rem 0;
+		margin: 1px 0 2px 0;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 1024px){
+	header{
+		h1,h2,h3,h4,h5,h6{
+			text-align: center;
+		}
+		h2{
+			margin: 0;
+		}
 	}
 }
 .contain-to-grid{
