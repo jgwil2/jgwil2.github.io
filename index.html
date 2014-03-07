@@ -29,19 +29,43 @@ layout: default
 			</figure>
 		</div>
 	</div>
+
 	<div class="row">
 		<div class="small-6 large-6 columns">
 			<a href="https://twitter.com/jgwil2" class="twitter-follow-button" data-dnt="true" data-align="right" data-size="large" data-show-count="false" data-lang="en">Follow @jgwil2</a>
 		</div>
 		<div class="small-6 large-6 columns">
-			<h4><a href="/about" class="move right">More about me &#8594;</a></a></a></h4>
+			<h4><a href="/about" class="move right">More about me &#8594;</a></h4>
+		</div>
+	</div>
+
+	<div class="row topborder">
+		<div class="large-12 columns">
+			<h2>Projects</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-8 medium-8 columns">
+			<p>This is a recent project of mine and Donec libero libero, bibendum non condimentum ac, ullamcorper at sapien. Duis feugiat urna vel justo cursus facilisis. Vivamus ligula dui, convallis avarius vitae, facilisis eget magna. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+		</div>
+		<div class="large-4 medium-4 columns">
+			<figure>
+				<img src="/img/numberstoletters.png" alt="Numbers to Letters screenshot" />
+			</figure>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h4><a href="/projects" class="move right">See all projects &#8594;</a></h4>
 		</div>
 	</div>
 	
 	{% for post in site.posts limit:1 %}
     <div class="row topborder">
 		<div class="large-12 columns">
-			<h2>Recent posts</h2>
+			<h2>Blog</h2>
 			<h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
 			<p class="meta">{{ post.date | date_to_string }}</p>
 			{{ post.content | truncatewords: 150 }}
