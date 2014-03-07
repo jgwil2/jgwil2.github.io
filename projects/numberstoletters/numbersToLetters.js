@@ -25,8 +25,6 @@ function parseText(userInput){
 
 function numbersToLetters(numb){
 
-	alert(numb);
-
 	var punctAfter = null, // punctuation is null by default
 	punctBefore = null;
 
@@ -41,8 +39,6 @@ function numbersToLetters(numb){
 		punctBefore = numbArray[0];
 		numbArray.shift();
 	}
-
-	alert(numbArray);
 
 	numb = numbArray.join('');
 
