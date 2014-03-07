@@ -25,6 +25,8 @@ function parseText(userInput){
 
 function numbersToLetters(numb){
 
+	alert(numb);
+
 	var punctAfter = null, // punctuation is null by default
 	punctBefore = null;
 
@@ -40,7 +42,9 @@ function numbersToLetters(numb){
 		numbArray.shift();
 	}
 
-	numb = numbArray.join();
+	alert(numbArray);
+
+	numb = numbArray.join('');
 
 	var onesToLetters = ['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],
 	tensToLetters = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
