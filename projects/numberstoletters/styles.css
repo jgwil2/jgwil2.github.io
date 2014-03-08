@@ -25,6 +25,9 @@ input[type=button]:hover{
 #link{
 	clear: both;
 }
+a:visited{
+	color: blue;
+}
 @media screen and (min-width: 1024px){
 	#indiv{
 		float: left;
