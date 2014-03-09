@@ -1,7 +1,7 @@
 function parseText(userInput){
 	var userInputArray = userInput.split(' '); // take user input and create array 
+	var pattern = new RegExp("^['\"]?[0-9]+[,;:!?./'\"\n\-]?$"); // numbers only, no other characters (update for decimal numbers later?)
 	for (var i = 0; i < userInputArray.length; i++) {
-		var pattern = new RegExp("^['\"]?[0-9]+[,;:!?./'\"\n\-]?$"); // numbers only, no other characters (update for decimal numbers later?)
 		if(pattern.test(userInputArray[i])){
 			// alert("matched " + userInputArray[i] + " !"); // filler code to make sure regex works
 			userInputArray[i] = numbersToLetters(userInputArray[i]); // call numbers to letters conversion function and store its return in array
