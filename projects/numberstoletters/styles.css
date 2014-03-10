@@ -11,6 +11,7 @@ h1,h2,h3,h4,h5,h6{
 	width: 100%;
 	border: solid gray 1px;
 	border-radius: 5px;
+	font-family: inherit;
 }
 input[type=button]{
 	background-color: #fff;
@@ -21,18 +22,6 @@ input[type=button]{
 input[type=button]:hover{
 	background-color: #ddd;
 	border: solid #666 1px;
-}
-#link{
-	clear: both;
-}
-a:link{
-	color: #224770;
-}
-a:visited{
-	color: #224770;
-}
-a:hover{
-	color: #7FDBFF;
 }
 @media screen and (min-width: 1024px){
 	#indiv{
