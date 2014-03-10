@@ -23,6 +23,9 @@ input[type=button]:hover{
 	background-color: #ddd;
 	border: solid #666 1px;
 }
+#link{
+	clear: both;
+}
 @media screen and (min-width: 1024px){
 	#indiv{
 		float: left;
