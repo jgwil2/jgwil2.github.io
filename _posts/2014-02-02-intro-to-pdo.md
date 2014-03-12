@@ -119,7 +119,8 @@ $message = trim($_POST['message']);
 
 {% highlight php %}
 <?php
-$que = $db->prepare('INSERT INTO minichat(username, message, datetime) VALUES(:username, :message, NOW())'); // Prepare request with variables. New row w/username and message.
+$que = $db->prepare('INSERT INTO minichat(username, message, datetime) VALUES(:username, :message, NOW())'); 
+// Prepare request with variables. New row w/username and message.
 $que->execute(array(
 	'username' => $username, // Execute request with variables from the form in minichat.php
 	'message'  => $message 
