@@ -47,8 +47,7 @@ function parseText(userInput){
 			userInputArray[i] = numbersToLetters(userInputArray[i]); 
 		}
 	}
-	// here I will add more code later that will send
-	// the transformed text to output and display it
+	// ...
 }
 {% endhighlight %}
 <br />
