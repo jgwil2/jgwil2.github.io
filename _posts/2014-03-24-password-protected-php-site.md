@@ -116,7 +116,7 @@ header('Location: auth.php')
 ?>
 {% endhighlight %}
 <br />
-The function `session_destroy()` will destroy all of the data associated with the session. Then `unset()` will empty `$_SESSION['login']`. Again, we redirect to the login page. The user will now have to log in again in order to do any of the restricted actions.
+The function `session_destroy()` will destroy all of the data associated with the session. Then `unset()` will empty `$_SESSION['login']` (this is a precaution that should only apply to older versions of PHP). Again, we redirect to the login page. The user will now have to log in again in order to do any of the restricted actions.
 
 One thing missing from this write-up is a registration page; it wasn't really necessary to my project, as I wanted to be the only person making changes to the database via the interface. But if you did want to start registering users, you have everything you need to implement it right here. You would get the user to enter a username and password, checking the database to make sure that the username wasn't already taken. Then, you would run the password through `password_hash()` before storing the resulting hash in the database. You could also store password hints or something like that if you wanted, because if the user forgets his or her password, _you have no way of looking it up_. Although this might seem like an inconvenience, your users will certainly be pleased if your database ever gets hacked.
 
