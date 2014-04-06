@@ -27,10 +27,10 @@
         <section class="top-bar-section">
           <ul class="right">
             {% assign active = page.url | downcase | split : '/' %}
-            <li {% if active[1] == 'about' %}class='active'{% endif %}><a href="/about">About</a></li>
-            <li {% if active[1] == 'projects' %}class='active'{% endif %}><a href="/projects">Projects</a></li>
-            <li {% if active[1] == 'posts' %}class='active'{% endif %}><a href="/posts">Posts</a></li>
-            <li {% if active[1] == 'contact' %}class='active'{% endif %}><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/posts">Posts</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </section>
       </nav>
