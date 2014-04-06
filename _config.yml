@@ -1,5 +1,5 @@
 name: John Willard
-description: A blog by John Willard
+description: A blog about web deveopment by John Willard
 markdown: redcarpet
 pygments: true
 permalink: pretty
