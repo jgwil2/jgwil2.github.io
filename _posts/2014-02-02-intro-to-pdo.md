@@ -77,7 +77,8 @@ $que = $db->query('SELECT username, message, DATE_FORMAT(datetime, \'%e/%c/%Y %r
 <?php
 while($data = $que->fetch()){
 		echo '<div class="message">'.$data['username'].': '.$data['message'].'</div><div class="time">'.$data['date'].'</div>';
-	$que->closeCursor();
+}
+$que->closeCursor();
 ?>
 {% endhighlight %}
 <br />
