@@ -27,7 +27,7 @@ To add virtual hosts:
 	ServerAlias sitealias
 </VirtualHost>
 {% endhighlight %}
-<p>An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</p></li>
+An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</li>
 
 <li><p>If the site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:</p>
 {% highlight apacheconf %}
