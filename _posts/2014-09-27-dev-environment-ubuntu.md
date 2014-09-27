@@ -7,7 +7,7 @@ Lately I've been developing on Ubuntu and I really enjoy it. Package management 
 
 ### Getting the LAMP stack ###
 
-One of the first things that you'll probably want to do is install Apache, PHP, and MySQL. The [Advanced Packaging Tool](https://help.ubuntu.com/12.04/serverguide/apt-get.html) makes this as easy as running the following commands:`sudo apt-get update` to make sure that you have the most up to date packages indexed, and `sudo apt-get install lamp-server^` to install the programs. Apache2 and MySQL will be added to the startup scripts so you don't even have to turn them on. Just check out the [Apache2 Ubuntu Default Page](http://localhost) to see that it works and get some basic info on the setup. You should also be able to run PHP and MySQL from the command line, but note that a graphical interface such as [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php) will have to be installed separately.
+One of the first things that you'll probably want to do is install Apache, PHP, and MySQL. The [Advanced Packaging Tool](https://help.ubuntu.com/12.04/serverguide/apt-get.html) makes this as easy as running the following commands: `sudo apt-get update` to make sure that you have the most up to date packages indexed, and `sudo apt-get install lamp-server^` to install the programs. Apache2 and MySQL will be added to the startup scripts so you don't even have to turn them on. Just check out the [Apache2 Ubuntu Default Page](http://localhost) to see that it works and get some basic info on the setup. You should also be able to run PHP and MySQL from the command line, but note that a graphical interface such as [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php) will have to be installed separately. If you want to install the stack components separately, check out [this documentation page](https://help.ubuntu.com/community/ApacheMySQLPHP) for the details.
 
 ### Setting up virtual hosts ###
 
@@ -16,20 +16,24 @@ Once Apache is installed, the default host is 'localhost' and its document root 
 To add virtual hosts:
 
 1. Set up the location of new site. Add `index.html` (or `index.php`) for testing.
-2. Modify `/etc/hosts` file. Add loopback address for new website. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)
-3. Go to `/etc/apache2/sites-available/` and add `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add virtual host configuration inside this file:
+2. Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)
+3. Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:
+{% highlight apacheconf %}
     <VirtualHost *:80>
         DocumentRoot /path/to/site/root
 	ServerName sitename
 	ServerAlias sitealias
     </VirtualHost>
+{% endhighlight %}
 An alias is another name that your site could be known by (for example google.com and www.google.com both refer to the same site).
 4. If site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:
+{% highlight apacheconf %}
     <Directory /path/to/site/root>
         Options Indexes FollowSymLinks
         AllowOverride None
         Require all granted
     </Directory>
+{% endhighlight %}
 5. Run the following commands as root: `a2ensite sitename` to enable site and `service apache2 reload` (or `/etc/init.d/apache2 reload`) to activate.
 
 ### Editing files ###
