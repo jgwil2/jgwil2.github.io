@@ -43,12 +43,14 @@ To add virtual hosts:
 ### Editing files ###
 
 One big challenge when using Linux is editing files with Vi/Vim. This is a text-based editor that does not have a graphical user interface and is instead used from the command line. The first thing you might want to do is just run `vimtutor` in a terminal; this will open up a tutorial that will teach you the basics. Maybe one of the coolest aspects of Vim is the ability to customize it with a `.vimrc` file. Here's mine with some basics:
-	set nu
-	nnoremap ; :
-	set autoindent
-	:inoremap ( ()<Esc>i
-	:inoremap [ []<Esc>i
-	:inoremap { {}<Esc>i
+{% highlight vim %}
+set nu
+nnoremap ; :
+set autoindent
+:inoremap ( ()<Esc>i
+:inoremap [ []<Esc>i
+:inoremap { {}<Esc>i
+{% endhighlight %}
 Vim will run these commands everytime it starts so that I don't have to manually type them each time. My file adds line numbers and autoindentation, maps the semicolon to the colon in normal mode (saving my pinkie finger some work pushing the shift key), and inserts a closing bracket for each opening bracket typed in insert mode, automatically placing the cursor between them.
 
 While I'm learning Vim, however, if you decide you would still like to have Sublime Text 2, that's also easy enough to do. There are two methods, apt-get and building from source. In order to install via apt-get, you just have to add the repository to your package manager by running `sudo add-apt-respository ppa:webupd8team/sublime-text-2`. Then update your packages again and install by running `sudo apt-get install sublime-text-installer`. If you prefer to build from source, check out [this article](http://www.tecmint.com/install-sublime-text-editor-in-linux/).
