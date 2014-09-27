@@ -26,13 +26,13 @@ And the file at `_layouts/default.html` just contains this:
 {% include footer.html %}
 {% endraw %}
 ```
-<br />
+
 So when the final `_site/index.html` page is assembled by Jekyll, it's going to consist of whatever code is in `_includes/header.html`, followed by the content of `index.html`, and then the code from `_includes/footer.html`. So the first thing to do is write up a header with Foundation and put it in the _includes folder. To make things super easy, Foundation even provides [templates](http://foundation.zurb.com/templates.html) to get you started. For this example I'm going to use the "blog" template, which looks like this:
 
 <figure>
 	<img alt="Screenshot of Foundation blog template" src="/img/found_template_screen.png" />
 </figure>
-<br />
+
  Take a look at the HTML used to construct this page. If you're familiar with HTML, but you haven't used responsive frameworks before, some of the markup might seem strange. The most important thing to remember is that Foundation, like Bootstrap, is built on a grid system: content is organized into rows and columns which the framework will move around to fit any screen size. So all content has to be inside of a `<div class="row">`. The children of rows are always columns, and you can define the width of columns with numbers adding up to 12. So inside of a `<div class="row">`, you might have a `<div class="large-9 columns">` and a `<div class="large-3 columns">`. Or you might have two `<div class="large-6 columns">`. As long as the width of all columns in a given row adds up to twelve, you're good.
 
  Now that you've got the basics of Foundation, I'm going to use this template to create a new look for the blog. Let's start with `header.html`.
@@ -51,7 +51,7 @@ So when the final `_site/index.html` page is assembled by Jekyll, it's going to 
     <link rel="stylesheet" href="/syntax.css" />
   </head>
 {% endhighlight %}
-<br />
+
 Then, I open up a `<body>` tag, and I drop the code from the template right in:
 
 {% highlight html %}
@@ -101,7 +101,6 @@ For `footer.html` I can do the same thing, closing the `<body>` tag at the end:
   </footer>
 </body>
 {% endhighlight %}
-<br />
 
 These two files will bookend every page that has `layout: default` set in its front matter. Now all I have to worry about is the `{% raw %}{{ content }}{% endraw %}` of the page.
 
@@ -154,13 +153,13 @@ If you read Part 1, you'll recall that the core of the home page of a blog is "t
   <!-- End Main Content and Sidebar -->
 {% endraw %}
 {% endhighlight %}
-<br />
+
 Now I'll go to the terminal and run `jekyll serve`, and I have this:
 
 <figure>
 	<img alt="My Jekyll blog with the Foundation template" src="/img/found_jekyll_screen.png" />
 </figure>
-<br />
+
 You might have noticed that I just went ahead and threw both the main content and the sidebar area into `index.html`. If we wanted to get even fancier, we could put the HTML for the sidebar into a separate `sidebar.html` file in the _includes folder, and modify `_layouts/default.html` so that it would look like this:
 
 ```
@@ -174,7 +173,7 @@ You might have noticed that I just went ahead and threw both the main content an
 {% include footer.html %}
 {% endraw %}
 ```
-<br />
+
 Feel free to give it a shot; it will give you even more freedom when you start constructing new layouts. Just remember that in order for it to work with Foundation, each row has to have 12 columns. Sometimes that can be hard to keep track of when you're throwing different files together on the fly. 
 
 If this post interested you, go and check out the Foudation docs: they've got tons of cool stuff that can make development easier and more fun. Next steps might include using the Foundation Sass to customize your site's look and adding some different web fonts; one problem with frameworks like this is that they tend to all look the same if you don't add a little personal flair. Let me know what you learn!

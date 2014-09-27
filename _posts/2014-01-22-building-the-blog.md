@@ -61,7 +61,7 @@ demo site explaining some of Jekyll's functionalities:
 <figure>
 	<img alt="Jekyll defaul site" src="/img/default_jekyll_post.png" />
 </figure>
-<br />
+
 ### Making the site work
 
 Again, if you're familiar with WordPress, the basic concept of Jekyll shouldn't be too strange to you. When you build your site, Jekyll should generate the following file structure in your project folder:
@@ -90,8 +90,8 @@ In the _layouts subdirectory you should already have a couple of files, `default
 
 {% include footer.html %}
 {% endraw %}
-{% endhighlight %}  
-<br />
+{% endhighlight %}
+
 When we build the site, however, Jekyll is going go to the _includes directory and get those files, and then put them together with our content. So far so good, right? But what exactly is our content, and where can we find it?
 
 The heart of a Jekyll blog is the loop, which lives in `index.html` in the project's root dircetory. Your file should look something like this:
@@ -115,8 +115,8 @@ layout: default
 		
 	{% endfor %}
 {% endraw %}
-{% endhighlight%}  
-<br />
+{% endhighlight%}
+
 For now we'll ignore the HTML and focus on the Jekyll-specific code. First of all, at the very top of the file we have the Front Matter between two sets of three dashes. The first is the page title, which will now be available to us as a variable. The second is just where we tell Jekyll to use `_layouts/default.html` when generating the page.
 
 In between the {% raw %}`{% %}`{% endraw %} tags we find a good old fashioned for loop that allows us to print out the content and other information for each post. Jekyll will repeat everything between {% raw %}`{% for post in site.posts %}` and `{% endfor %}`{% endraw %}, for every post you have. If you want to limit the number of posts displayed, just use something like {% raw %}`{% for post in site.posts limit:1 %}`{% endraw %}. This will tell Jekyll to only show the most recent post, whereas `limit:5` will display the five most recent.
@@ -135,7 +135,7 @@ pygments: true
 permalink: pretty
 url: "http://jgwil2.github.io"
 {% endhighlight %}
-<br />
+
 You can define variables here that will be available site-wide, such as {% raw %}`{{site.name}}`{% endraw %} and {% raw %}`{{site.url}}`{% endraw %}, which can also come in handy. And finally, setting `permalink` to `pretty` will cause Jekyll to create a subdirectory with the name of your slug, and your post will be found at the index of that subdirectory. That way, instead of "site/2014/01/22/building-the-blog.html," you'll have a nice clean URL without that extension: "/2014/01/22/building-the-blog/".
 
 So that is a really quick treatment of Jekyll and what I did with it. Check out the [documentation](http://jekyllrb.com/docs/home/) or [this tutorial](https://learn.andrewmunsell.com/learn/jekyll-by-example/introduction) for more info. In a coming post I'll talk about using the Foundation 5 framework for the front-end of the site, and I'll try to tackle whatever else comes along too. Please don't hesitate to comment if you have any other knowledge to drop, or I'm missint something, or I'm just dead wrong about something. Thanks for reading!
