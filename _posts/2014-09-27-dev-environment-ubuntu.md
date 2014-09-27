@@ -17,7 +17,7 @@ To add virtual hosts:
 <ol>
 <li><p>Set up the location of new site. Add `index.html` (or `index.php`) for testing.</p></li>
 
-<li><p>Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)</p></li>
+<li><p>Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (`127.0.0.1 <tab> sitename`)</p></li>
 
 <li><p>Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:</p>
 {% highlight apacheconf %}
