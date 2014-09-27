@@ -14,12 +14,10 @@ One of the first things that you'll probably want to do is install Apache, PHP, 
 Once Apache is installed, the default host is 'localhost' and its document root is located at `/var/www/html`. I found this to be an inconvenient location for my projects as it's outside of the home directory and it's owned by root. This means that everytime you want to update a file you'll have to navigate out of the home directory and and either enter your password everytime you make a change or run your editing program as the root user. To avoid these headaches I decided to set up virtual hosts in my home directory. If you keep your projects in a folder called `Projects/`, for example, you would simply go there and create a new subdirectory called `local/` or `php/` or whatever, and then configure Apache to serve the pages from that directory in addition to the default directory. You can create as many sites as you want this way.
 
 To add virtual hosts:
-
-1. Set up the location of new site. Add `index.html` (or `index.php`) for testing.
-
-2. Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)
-
-3. Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:
+<ol>
+<li>Set up the location of new site. Add `index.html` (or `index.php`) for testing.</li>
+<li>Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)</li>
+<li>Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:
 {% highlight apacheconf %}
 <VirtualHost *:80>
 	DocumentRoot /path/to/site/root
@@ -27,19 +25,17 @@ To add virtual hosts:
 	ServerAlias sitealias
 </VirtualHost>
 {% endhighlight %}
-An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).
-
-4. If site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:
+An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</li>
+<li>If site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:
 {% highlight apacheconf %}
 <Directory /path/to/site/root>
 	Options Indexes FollowSymLinks
 	AllowOverride None
 	Require all granted
 </Directory>
-{% endhighlight %}
-
-5. Run the following commands as root: `a2ensite sitename` to enable site and `service apache2 reload` (or `/etc/init.d/apache2 reload`) to activate.
-
+{% endhighlight %}</li>
+<li>Run the following commands as root: `a2ensite sitename` to enable site and `service apache2 reload` (or `/etc/init.d/apache2 reload`) to activate.</li>
+</ol>
 ### Editing files ###
 
 One big challenge when using Linux is editing files with Vi/Vim. This is a text-based editor that does not have a graphical user interface and is instead used from the command line. The first thing you might want to do is just run `vimtutor` in a terminal; this will open up a tutorial that will teach you the basics. Maybe one of the coolest aspects of Vim is the ability to customize it with a `.vimrc` file. Here's mine with some basics:
