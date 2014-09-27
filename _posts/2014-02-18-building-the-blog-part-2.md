@@ -14,7 +14,7 @@ title: Home
 layout: default
 ---
 ```
-<br />
+
 And the file at `_layouts/default.html` just contains this:
 
 ```
@@ -75,7 +75,7 @@ Then, I open up a `<body>` tag, and I drop the code from the template right in:
  
   <!-- End Nav -->
 {% endhighlight %}
-<br />
+
 For `footer.html` I can do the same thing, closing the `<body>` tag at the end:
 
 {% highlight html %}
