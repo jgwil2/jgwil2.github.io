@@ -15,11 +15,11 @@ Once Apache is installed, the default host is 'localhost' and its document root 
 
 To add virtual hosts:
 <ol>
-<li>Set up the location of new site. Add `index.html` (or `index.php`) for testing.</li>
+<li><p>Set up the location of new site. Add `index.html` (or `index.php`) for testing.</p></li>
 
-<li>Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)</li>
+<li><p>Modify `/etc/hosts` file. Add a loopback address for the new site. This means that when you visit this domain name, your request will be routed back to your local computer. The address `localhost` should already be configured; just add your own site's name below. (127.0.0.1 <tab> sitename)</p></li>
 
-<li>Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:
+<li><p>Go to `/etc/apache2/sites-available/` and add a `sitename.conf` file (or just `sitename`, depending on your version of Ubuntu). Add the virtual host configuration inside this file:</p>
 {% highlight apacheconf %}
 <VirtualHost *:80>
 	DocumentRoot /path/to/site/root
@@ -27,9 +27,9 @@ To add virtual hosts:
 	ServerAlias sitealias
 </VirtualHost>
 {% endhighlight %}
-An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</li>
+<p>An alias is another name that your site could be known by (for example the URL's [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</p></li>
 
-<li>If the site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:
+<li><p>If the site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:</p>
 {% highlight apacheconf %}
 <Directory /path/to/site/root>
 	Options Indexes FollowSymLinks
@@ -38,7 +38,7 @@ An alias is another name that your site could be known by (for example the URL's
 </Directory>
 {% endhighlight %}</li>
 
-<li>Run the following commands as root: `a2ensite sitename` to enable site and `service apache2 reload` (or `/etc/init.d/apache2 reload`) to activate.</li>
+<li><p>Run the following commands as root: `a2ensite sitename` to enable site and `service apache2 reload` (or `/etc/init.d/apache2 reload`) to activate.</p></li>
 </ol>
 ### Editing files ###
 
