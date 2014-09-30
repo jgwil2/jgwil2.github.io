@@ -11,7 +11,7 @@ One of the first things that you'll probably want to do is install Apache, PHP, 
 
 ### Setting up virtual hosts ###
 
-Once Apache is installed, the default host is 'localhost' and its document root is located at `/var/www/html`. I found this to be an inconvenient location for my projects as it's outside of the home directory and it's owned by root. This means that everytime you want to update a file you'll have to navigate out of the home directory and and either enter your password everytime you make a change or run your editing program as the root user. To avoid these headaches I decided to set up virtual hosts in my home directory. If you keep your projects in a folder called `Projects/`, for example, you would simply go there and create a new subdirectory called `local/` or `php/` or whatever, and then configure Apache to serve the pages from that directory in addition to the default directory. You can create as many sites as you want this way.
+Once Apache is installed, the default host is 'localhost' and its document root is located at `/var/www/html`. I found this to be an inconvenient location for my projects as it's outside of the home directory and it's owned by root. This means that everytime you want to update a file you'll have to navigate out of the home directory and either enter your password everytime you make a change or run your editing program as the root user. To avoid these headaches I decided to set up virtual hosts in my home directory. If you keep your projects in a folder called `Projects/`, for example, you would simply go there and create a new subdirectory called `local/` or `php/` or whatever, and then configure Apache to serve the pages from that directory in addition to the default directory. You can create as many sites as you want this way.
 
 To add virtual hosts:
 <ol>
@@ -29,7 +29,7 @@ To add virtual hosts:
 {% endhighlight %}
 An alias is another name that your site could be known by (for example the URLs [google.com](http://google.com) and [www.google.com](http://www.google.com) both refer to the same site).</li>
 
-<li><p>If the site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add root directory:</p>
+<li><p>If the site root is located anywhere other than `/var/www`, `/usr/share`, or a previously whitelisted directory, go to `/etc/apache2/apache2.conf` and add the root directory:</p>
 {% highlight apacheconf %}
 <Directory /path/to/site/root>
 	Options Indexes FollowSymLinks
