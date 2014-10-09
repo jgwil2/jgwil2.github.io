@@ -44,7 +44,7 @@
           dataType: 'json',
           encode: true,
           success: function(data){
-            $('form').append('<div data-alert class="alert-box success radius">'
+            $('#formRow').append('<div data-alert class="alert-box success radius">'
                                 + data.message
                                 + '<a href="#" class="close">&times;</a></div>'
                                 );
