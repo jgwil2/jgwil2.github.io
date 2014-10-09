@@ -44,10 +44,11 @@
           dataType: 'json',
           encode: true,
           success: function(data){
-            $('#formRow').append('<div data-alert class="alert-box success radius">'
+            $('#formRow').append('<div data-alert class="alert-box success radius" id="successAlert">'
                                 + data.message
                                 + '<a href="#" class="close">&times;</a></div>'
                                 );
+            $('#successAlert').foundation();
           }
         });
         event.preventDefault();
