@@ -48,7 +48,7 @@
                                 + data.message
                                 + '<a href="#" class="close">&times;</a></div>'
                                 );
-            $('#successAlert').foundation({alert: {speed: 3000}});
+            $(document).foundation('alert', 'events');
           }
         });
         event.preventDefault();
