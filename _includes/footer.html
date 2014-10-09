@@ -28,6 +28,31 @@
 	</script>
 	{% endif %}
 
+	{% if page.url == "/contact/" %}
+    <script>
+    $(document).ready(function(){
+      $('form').submit(function(event){
+        var formData = {
+          'email': $('input[name=email]').val(),
+          'name': $('input[name=name').val(),
+          'message': $('input[name=message]').val()
+        };
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:5000',
+          data: formData,
+          dataType: 'json',
+          encode: true,
+          success: function(data){
+            $('form').append('<p>' + data.message + '</p>');
+          }
+        });
+        event.preventDefault();
+      });
+    });
+    </script>
+    {% endif %}
+
 	{% for post in site.posts %}
 	{% if post.url == page.url %}
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
