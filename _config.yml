@@ -1,6 +1,6 @@
 name: John Willard
 description: A blog about web deveopment by John Willard
 markdown: redcarpet
-pygments: true
+highlighter: 'pygments'
 permalink: pretty
 url: "http://jgwil2.github.io"

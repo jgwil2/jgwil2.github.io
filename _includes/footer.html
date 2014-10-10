@@ -9,53 +9,62 @@
 	</div>
 </footer>
 	<script src="/js/modernizr.js"></script>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-    <script src="/js/foundation.min.js"></script>
-    <script>
-  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="/js/jquery-2.0.3.min.js"></script>
+		<script src="/js/foundation.min.js"></script>
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  	ga('create', 'UA-48204811-1', 'jgwil2.github.io');
-  	ga('send', 'pageview');
+		ga('create', 'UA-48204811-1', 'jgwil2.github.io');
+		ga('send', 'pageview');
 	</script>
-    <script>
-      $(document).foundation();
-    </script>
+		<script>
+			$(document).foundation();
+		</script>
 	{% if active[1] == null %}
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 	</script>
 	{% endif %}
 
 	{% if page.url == "/contact/" %}
-    <script>
-    $(document).ready(function(){
-      $('form').submit(function(event){
-        var formData = {
-          'email': $('input[name=email]').val(),
-          'name': $('input[name=name').val(),
-          'message': $('textarea[name=message]').val()
-        };
-        $.ajax({
-          type: 'POST',
-          url: 'http://serene-wave-2805.herokuapp.com/',
-          data: formData,
-          dataType: 'json',
-          encode: true,
-          success: function(data){
-            $('#formRow').append('<div data-alert class="alert-box success radius" id="successAlert">'
-                                + data.message
-                                + '<a href="#" class="close">&times;</a></div>'
-                                );
-            $(document).foundation();
-          }
-        });
-        event.preventDefault();
-      });
-    });
-    </script>
-    {% endif %}
+		<script>
+		$(document).ready(function(){
+			$('form').submit(function(event){
+				var formData = {
+					'email': $('input[name=email]').val(),
+					'name': $('input[name=name').val(),
+					'message': $('textarea[name=message]').val()
+				};
+				$.ajax({
+					type: 'POST',
+					url: 'http://serene-wave-2805.herokuapp.com/',
+					data: formData,
+					dataType: 'json',
+					encode: true,
+					success: function(data){
+						$('#formRow').append(
+							'<div data-alert class="alert-box success radius">'
+							+ data.message
+							+ '<a href="#" class="close">&times;</a></div>'
+							);
+						$(document).foundation();
+					},
+					error: function(){
+						$('#formRow').append(
+							'<div data-alert class="alert-box success radius">'
+							+ 'An error occurred. Please try again later'
+							+ '<a href="#" class="close">&times;</a></div>'
+							);
+						$(document).foundation();
+					}
+				});
+				event.preventDefault();
+			});
+		});
+		</script>
+		{% endif %}
 
 	{% for post in site.posts %}
 	{% if post.url == page.url %}
@@ -82,5 +91,5 @@
 	</script>
 	{% endif %}
 	{% endfor %}
-  </body>
+	</body>
 </html>
